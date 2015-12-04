@@ -1,0 +1,59 @@
+body
+{
+	border: 1px solid blue;
+	border-radius: 5px;
+	margin: 0 auto;
+	max-width: 1024px;
+}
+
+body header img
+{
+	float: right;
+	margin: -100px 30px;
+	width: 100px;
+}
+
+body header h1
+{
+	margin: 10px 0px 0px 30px;
+}
+
+body header nav
+{
+	display: none;
+	margin-top: 35px ;
+}
+
+body header nav ul li
+{
+	display: inline-block;
+	margin-right: 10px;
+}
+
+main
+{
+	margin-top: 80px;
+}
+#btnmuestragrupos{
+display: none;
+}
+
+.entradaUsuario
+{
+	margin: 0 auto;
+	width: 350px;
+}
+.gruposDocente{
+	display: none;
+	width:900px;
+}
+
+
+
+
+
+
+
+
+
+
