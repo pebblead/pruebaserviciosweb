@@ -18,22 +18,13 @@ body header h1
 	margin: 10px 0px 0px 30px;
 }
 
-body header nav
+
+
+section 
 {
-	display: none;
-	margin-top: 35px ;
+	text-align: center;
 }
 
-body header nav ul li
-{
-	display: inline-block;
-	margin-right: 10px;
-}
-
-main
-{
-	margin-top: 80px;
-}
 #btnmuestragrupos{
 display: none;
 }

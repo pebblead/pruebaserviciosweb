@@ -1,0 +1,11 @@
+commit 0476e8cd7bfa7c033eeaadc4c429292af0451e66
+Author: pebblead <pebble.ad@hotmail.com>
+Date:   Fri Dec 4 00:02:17 2015 -0700
+
+    Login y grupos por docente
+
+commit 97a5f3bd025a692c780c1e96535e1d40b1932e5a
+Author: pebblead <pebble.ad@hotmail.com>
+Date:   Thu Dec 3 15:24:38 2015 -0700
+
+    prueba git

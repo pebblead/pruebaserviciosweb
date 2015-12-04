@@ -20,11 +20,11 @@ var inicio = function(){
 		  success: function(data){
 		  	
 		     if(data.respuesta){
-		     	alert("si existe");
+		     	
 		     	$(".entradaUsuario").hide("slow");
 		     	$("#btnmuestragrupos").show("slow");
 		     }else{
-		     	alert("No existe");
+		     	alert("Docente no registrado");
 		     }
 		  }
 		});
@@ -32,6 +32,8 @@ var inicio = function(){
 	
 	var vergrupos = function(){
 		$(".gruposDocente").toggle("show");
+		$("#tablaGrupos").html("");
+		
 		console.log("HEY");
 		$.ajax({
 		  beforeSend: function(){
@@ -41,32 +43,24 @@ var inicio = function(){
 			dataType: "json",
 			url: "http://intertec.itculiacan.edu.mx/intertecmovil/grupos.php?",
 			data: parametros,
-
-		  /*success: function(data){
-		  	console.log(data)
-		  	console.log(data[0].clavegrupo);
-		    console.log(data[0].clavemateria);
-
-
-		    response = $.parseJSON(data);
-
-			$(function() {
-			    $.each(response, function(i, item) {
-			        var $tr = $('<tr>').append(
-			            $('<td>').text(item.clavegrupo),
-			            $('<td>').text(item.clavemateria),
-			            $('<td>').text(item.nombrecorto)
-			        ); //.appendTo('#records_table');
-			        console.log($tr.wrap('<p>').html());
-			    });
-			});
-		  }*/
 		  success: function (response) {
-		        var trHTML = '';
+
+		        var renglon = "<tr><th>Cve. grupo</th><th>Cve. materia</th><th>Nombre corto</th><th>Nombre materia</th><th>Lunes</th><th>Martes</th><th>Miercoles</th><th>Jueves</th><th>Viernes</th></tr>";
+		        $('#tablaGrupos').append(renglon);
+		        renglon='';
+
 		        $.each(response, function (i, item) {
-		            trHTML += '<tr><td>' + item.clavegrupo + '</td><td>' + item.clavemateria + '</td><td>'+ item.nombrecorto+'</td><td>'+ item.nombremateria +'</td><td>' + item.horalunes + '</td><td>'  + item.horamartes  + '</td><td>' + item.horamiercoles +'</td><td>' + item.horajueves + '</td><td>' + item.horaviernes + '</td></tr>';
+		            renglon += '<tr><td>' + item.clavegrupo 
+		            		+ '</td><td>' + item.clavemateria 
+		            		+ '</td><td>'+ item.nombrecorto
+		            		+'</td><td>'+ item.nombremateria 
+		            		+'</td><td>' + item.horalunes 
+		            		+ '</td><td>'  + item.horamartes  
+		            		+ '</td><td>' + item.horamiercoles 
+		            		+'</td><td>' + item.horajueves 
+		            		+ '</td><td>' + item.horaviernes + '</td></tr>';
 		        });
-		        $('#tablaGrupos').append(trHTML);
+		        $('#tablaGrupos').append(renglon);
 		    }
 		});
 
